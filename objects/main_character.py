@@ -1,11 +1,10 @@
-from creature import Creature
+from .human import Human
 
-class MainCharacter(Creature):
+class MainCharacter(Human):
 
-	class_name = "main character"
-	description = "Main character"
+    class_name = "main character"
+    _description = "Main character"
+    lifes = 15
 
-
-	def __init__(self, name, age):
-		super().__init__(name)
-		self.age = age
+    def __init__(self, name, age, sex, damage=2, job=None):
+        super().__init__(name, age, sex, job=None)
