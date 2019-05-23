@@ -2,9 +2,6 @@ from objects.human import Human
 from objects.main_character import MainCharacter
 from objects.creature import Creature
 
-def author_say(phrase):
-	print("*" + phrase + "*", "\n")
-
 
 mc = MainCharacter("Leha", 45, "Male", damage=9, lifes=10)
 
