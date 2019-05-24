@@ -53,7 +53,7 @@ class Creature:
             else:
                 raise NameError("This character doesn't exist")
         else:
-            raise NameError("{} id died".format(self.name))
+            raise NameError("{} is died".format(self.name))
 
 
     def get_damage(self, damage_given):
