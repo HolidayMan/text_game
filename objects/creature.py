@@ -1,6 +1,6 @@
 import random
 
-class Creature():
+class Creature:
     class_name = "creature"
     body_parts = []
     damaged_body_parts = []
