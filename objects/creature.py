@@ -76,7 +76,7 @@ class Creature:
         if self.lifes > 1:
             Creature.author_say("{} has {} lifes".format(self.name, self.lifes))
         elif self.lifes == 1:
-            Creature.author_say("{} has {} life".format(self.name, self.lifes))
+            Creature.author_say("{} has 1 life".format(self.name))
         else:
             Creature.author_say("{} is died".format(self.name))
 
