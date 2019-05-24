@@ -6,7 +6,7 @@ class Creature():
     damaged_body_parts = []
     _description = ""
     damage = 0
-    max_lifes = 0
+    _max_lifes = 0
     lifes = 0
     objects = {}
 
@@ -29,6 +29,12 @@ class Creature():
     def description(self):
         return self._description
     
+
+    @property
+    def max_lifes(self):
+        return self._max_lifes
+    
+
 
     @description.setter
     def description(self, desc):
@@ -54,11 +60,16 @@ class Creature():
         self.lifes -= damage_given
         self.get_health()
 
+
     def get_random_body_part(self):
         part = random.choice(self.body_parts)
+        self.damage_body_part(part)
+        return part
+
+
+    def damage_body_part(self, part):
         del self.body_parts[self.body_parts.index(part)]
         self.damaged_body_parts.append(part)
-        return part
 
 
     def get_health(self):
@@ -75,9 +86,13 @@ class Creature():
 
 
     def heal(self, count):
-        self.lifes += count
-        if self.lifes > self.max_lifes:
-            self.lifes = self.max_lifes
+        if self.is_alive():
+            self.lifes += count
+            if self.lifes > self.max_lifes:
+                self.lifes = self.max_lifes
+            Creature.author_say("{} has {} lifes.".format(self.name, self.lifes))
+        else:
+            raise NameError("{} is died.".format(self.name))
 
 
     def __str__(self):

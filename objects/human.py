@@ -13,7 +13,7 @@ class Human(Creature):
         self.age = age
         self.sex = sex
         self.damage = damage
-        self.max_lifes = lifes
+        self._max_lifes = lifes
         self.lifes = lifes
 
         if job != None:
